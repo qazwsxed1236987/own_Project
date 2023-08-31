@@ -1,0 +1,281 @@
+// 檔案位置: styles/global.scss
+// 變數覆蓋用 (Variable overrides)
+// 全站配色 colors
+$primary: #137976;
+$primary-dark: #0d5654;
+$primary-light: #7fb8b6;
+$primary-bg: #e5efef;
+$secondary: #ffce56;
+
+// 字體配色
+$font: #5f5f5f;
+$font-light: #ffff;
+
+// 按鈕圓角邊 button radius
+$border-radius: 0.2em;
+$border-radius-sm: 0.2em;
+$border-radius-lg: 0.2em;
+
+// 固定card高度
+// https://getbootstrap.com/docs/5.3/components/card/#grid-cards
+$card-height: 100%;
+
+// ↑↑↑  變數覆蓋(Variable overrides) 要寫在這行"上面"  ↑↑↑
+// 這裡導入所有 bootstrap 樣式
+// 最後營運階段(實務)可以用部份導入來進行最佳化
+// 參考: https://getbootstrap.com/docs/5.3/customize/sass/#importing
+@import '~bootstrap/scss/bootstrap';
+// ↓↓↓  其它客製樣式要寫在這行的"下面" ↓↓↓
+
+// bs5內建圖示字體
+// 如果有使用其它圖示字體可以註解不使用
+@import '~bootstrap-icons/font/bootstrap-icons';
+
+// google Noto Sans TC 字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;700&display=swap');
+
+// google Shippori+Mincho+B1 字體
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&display=swap');
+
+// fixed for __next root div
+#__next {
+  flex-direction: column;
+  height: 100%;
+  display: flex;
+}
+
+// 邊距 預留navbar空間
+main>.container {
+  padding: 140px 15px 0;
+}
+
+// 使用container  消除空白用
+.m-100 {
+  margin-top: -100px;
+}
+
+html,
+body {
+  height: 100%;
+  // 字體
+  font-family: 'YuGothic', 'Yu Gothic Regular', 'Noto Sans CJK TC Light',
+    'Noto Sans TC Regular',
+    //  Arial, '微軟正黑體','Shippori Mincho B1',
+    // Cross-platform generic font family (default user interface font)
+    system-ui,
+    // Safari for macOS and iOS (San Francisco)
+    -apple-system,
+    // Windows
+    'Segoe UI',
+    // Android
+    Roboto,
+    // Basic web fallback
+    'Helvetica Neue',
+    Arial,
+    // Linux
+    'Noto Sans',
+    'Liberation Sans',
+    // Sans serif fallback
+    sans-serif,
+    // Emoji fonts
+    'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+// 字體大小
+.text_24 {
+  font-size: 24px;
+  color: $font;
+  // text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.text_20 {
+  font-size: 20px;
+  color: $font;
+  // text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.text_24_b {
+  font-size: 24px;
+  font-weight: 700;
+  color: $primary;
+  // text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.text_light_24 {
+  font-size: 24px;
+  color: $font-light;
+  // text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.text_16 {
+  font-size: 16px;
+  color: $font;
+  // text-align: start;
+  letter-spacing: 0.05em;
+}
+
+.form-member {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+// 把x.y卷軸隱藏--------
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+// 陰影
+@mixin shadow {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+// 元件 標題
+// 深綠字(大標題)
+.title_box_dark {
+  border-left: 5px solid #ffce56;
+  padding-left: 30px;
+  margin-block: 30px;
+
+  // 分隔線
+  .hr_sect {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.35);
+    margin: 8px 0px;
+    font-size: 12px;
+
+    .title_text {
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 48px;
+      letter-spacing: 0.2em;
+      color: #0d5654;
+      margin: 10px;
+    }
+  }
+
+  .hr-sect:before,
+  .hr_sect:after {
+    content: '';
+    flex-grow: 1;
+    background: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    line-height: 0px;
+    margin: 0px 0px 0px 10px;
+  }
+}
+
+// 沒有+container 使用的空格(空出nav的距離)
+.container-space {
+  width: 100vw;
+  height: 100px;
+}
+
+// 白字
+.title_box_light {
+  border-left: 5px solid #ffce56;
+  padding-left: 30px;
+  margin-block: 5px;
+
+  .hr_sect {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: rgb(255, 253, 253);
+    margin: 8px 0px;
+    font-size: 12px;
+
+    .title_text {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 48px;
+      letter-spacing: 0.2em;
+      color: $font-light;
+      margin: 0px;
+    }
+  }
+
+  .hr-sect:before,
+  .hr_sect:after {
+    content: '';
+    flex-grow: 1;
+    background: rgb(255, 255, 255);
+    height: 1px;
+    line-height: 0px;
+    margin: 0px 0px 0px 10px;
+
+
+    ///佑佑加的
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-menu a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-menu a:hover {
+      background-color: #f1f1f1;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+  }
+}
+.ggg{
+  //想讓表單是不透明的
+  background-color: rgb(255, 255, 255);
+}
+.sidebar-frame {
+  position: relative;
+  width: 250px;
+  // height: 550px;
+  // background-color:rgba(255, 255, 255, 0.5);
+  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+  
+  box-shadow: 20px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  display: inline-block;
+  border-right: 3px solid #abadac;
+ 
+  border-radius: 0% 0% 0% 0% / 1% 1% 2% 4%;
+  
+  letter-spacing: 0.3ch;
+  
+  position: relative;
+
+  
+}
+.sidebar-frame:hover {
+  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+}
+.text-color{
+  color: #ffffff;
+}
+.font-size{
+  
+  font-weight: 900;
+}
+.font-size:hover{
+  color: #1a9da7;
+  border-bottom: 3px solid#ffd367;
+  font-weight: 700;
+
+}

@@ -1,0 +1,1489 @@
+@import 'animate.css';
+
+//RWD--------
+@mixin nopc {
+  @media (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin pad {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin down500 {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+
+$primary: #137976;
+$primary-dark: #0d5654;
+$primary-light: #7fb8b6;
+$primary-bg: #e5efef;
+$secondary: #ffce56;
+
+// 字體配色
+$font: #5f5f5f;
+$font-light: #ffff;
+
+// @include pad {
+//     min-width: 300px; //TODO RWD要設定縮小
+//     font-size: 24px;
+//     font-weight: 600;
+//     margin: 10px 0 0 50px;
+// }
+
+//   commonCard2元件使用
+
+.commonCard2 {
+  width: 280px;
+  height: 360px;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25),
+    -4px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  border: 1px solid #bababa;
+  background: #fff;
+  padding: 15px;
+  margin-top: 20px; //宣增加的設定
+  overflow: hidden;
+
+  @include pad {
+    width: 240px;
+    height: 300px;
+  }
+
+  @include mobile {
+    padding: 10px;
+    max-width: 240px;
+    max-height: 300px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .wh100-1 {
+    width: 100%;
+    height: 100%;
+  }
+
+  .imgbox {
+    max-height: 220px;
+    width: 100%;
+    height: 100%;
+
+    @include pad {
+      max-height: 180px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+
+      @include mobile {
+        transform: scale(1.1, 1.1) translateY(-10px);
+      }
+    }
+  }
+
+  .imgboxhover {
+    transform: scale(1.4, 1.15) translateY(-10px);
+    border-radius: 5px;
+    transition: 0.8s;
+  }
+
+  .textbox {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 90px;
+
+    @include pad {
+      height: 70px;
+    }
+
+    @include mobile() {
+      margin-top: 10px;
+      height: 90px;
+    }
+  }
+
+  .card2down {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .iconblock {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .fontnull {
+    visibility: hidden;
+  }
+
+  // 文字置中
+  .text-center {
+    text-align: center;
+  }
+
+  .font {
+    font-family: Hanuman;
+    font-weight: 700;
+    color: #0d5654;
+    margin: 0;
+
+    @include pad {
+      font-size: 15px;
+    }
+  }
+
+  .p {
+    margin: 0 0 0 0;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+
+    @include pad {
+      font-size: 10px;
+    }
+  }
+
+  .p-st1 {
+    color: #f09f03;
+  }
+
+  .p-st2 {
+    color: #7fb8b6;
+  }
+
+  .buttonStyle {
+    border: 0;
+    background: transparent;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+//大樣板變化 css
+.big {
+  width: 360px;
+  height: 480px;
+  padding: 30px;
+
+  @include pad {
+    width: 240px;
+    height: 300px;
+    padding: 15px;
+  }
+
+  @include mobile {
+    padding: 10px;
+    max-width: 240px;
+    max-height: 300px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .imgbox {
+    max-height: 300px;
+
+    @include pad {
+      max-height: 180px;
+    }
+  }
+
+  .font {
+    font-size: 24px;
+
+    @include pad {
+      font-size: 14px;
+    }
+  }
+
+  .p {
+    font-size: 16px;
+
+    @include pad {
+      font-size: 10px;
+    }
+  }
+
+  .textbox {
+    min-height: 100px;
+
+    @include pad {
+      min-height: 70px;
+    }
+  }
+
+  .buttonStyle {
+    width: 40px;
+    height: 40px;
+
+    @include pad {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+//收藏用卡片 css
+.likeCard {
+  width: 100%;
+  height: 300px;
+  max-width: 240px;
+  max-height: 300px;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25),
+    -4px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  border: 1px solid #bababa;
+  background: #fff;
+  padding: 10px;
+  margin-top: 20px;
+  margin: auto;
+  overflow: hidden;
+
+  .wh100-1 {
+    width: 100%;
+    height: 100%;
+  }
+
+  .imgbox {
+    width: 100%;
+    height: 100%;
+    max-height: 200px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      transform: scale(1.1, 1.1) translateY(-10px);
+    }
+  }
+
+  .textbox {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 70px;
+    margin-top: 10px;
+  }
+
+  .card2down {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .iconblock {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .fontnull {
+    visibility: hidden;
+  }
+
+  // 文字置中
+  .text-center {
+    text-align: center;
+  }
+
+  .font {
+    font-family: Hanuman;
+    font-weight: 700;
+    color: #0d5654;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .p {
+    margin: 0 0 0 0;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+
+  .p-st2 {
+    color: #7fb8b6;
+  }
+
+  .buttonStyle {
+    border: 0;
+    background: transparent;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+//   commonCard2元件使用結束-----
+
+.ticket {
+  //本頁面電腦版 缺少卡片調整
+  background-image: url('/images/food/紙感背景.jpg');
+  background-repeat: repeat;
+
+  .swiper {
+    max-width: 100%;
+    height: 630px;
+    margin-bottom: 50px;
+
+    @include mobile {
+      height: 400px;
+      margin-bottom: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+
+      @include mobile {
+        object-fit: fill;
+      }
+    }
+  }
+
+  //加載資料切換動畫
+  .t-loading {
+    position: relative;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    font-size: 20px;
+
+    padding-block: 60px;
+
+    .transition {
+      // margin-top: 500px;
+      display: block;
+      position: relative;
+      top: 10%;
+      height: 30px;
+      width: 400px;
+
+      // color: rgb(223, 60, 60);
+      overflow: hidden;
+      border-radius: 5px;
+    }
+
+    .transition::before {
+      content: '';
+      background: repeating-linear-gradient(
+        50deg,
+        #137976,
+        #137976 15px,
+        #addddb 0,
+        #addddb 30px
+      );
+      opacity: 0.6;
+      border: 2px solid #0d5654;
+      position: absolute;
+      left: -100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      animation: loading_302 0.5s linear infinite;
+    }
+
+    .transitiontext::before {
+      content: '';
+      z-index: 99;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin-top: -25px;
+      text-align: center;
+      font-size: 18px;
+      color: black;
+      animation: percentage_302 0.5s step-start infinite;
+    }
+  }
+
+  @keyframes loading_302 {
+    0% {
+      left: -100%;
+      /* Starting position */
+    }
+
+    100% {
+      left: 0%;
+      /* Move to the right */
+    }
+  }
+
+  @keyframes percentage_302 {
+    0% {
+      content: '0%';
+    }
+
+    5% {
+      content: '5%';
+    }
+
+    10% {
+      content: '10%';
+    }
+
+    20% {
+      content: '20%';
+    }
+
+    30% {
+      content: '30%';
+    }
+
+    40% {
+      content: '40%';
+    }
+
+    50% {
+      content: '50%';
+    }
+
+    60% {
+      content: '60%';
+    }
+
+    70% {
+      content: '70%';
+    }
+
+    80% {
+      content: '80%';
+    }
+
+    90% {
+      content: '90%';
+    }
+
+    95% {
+      content: '95%';
+    }
+
+    96% {
+      content: '96%';
+    }
+
+    97% {
+      content: '97%';
+    }
+
+    98% {
+      content: '98%';
+    }
+
+    99% {
+      content: '99%';
+    }
+
+    100% {
+      content: '100%';
+    }
+  }
+
+  // search
+
+  .tkSearch {
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0rem;
+    background-color: #addddb;
+    position: relative;
+    border-radius: 10px;
+    height: 280px;
+    z-index: 1;
+
+    // margin: auto;
+    @include pad {
+      height: 280px;
+    }
+
+    @include mobile {
+      background-color: transparent;
+      height: 100%;
+      padding: 15px;
+    }
+
+    @mixin fontfamily {
+      font-weight: bold;
+      font-family: Noto Sans SC;
+      color: $font;
+    }
+
+    .searchInput,
+    .searchbutton {
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #a5c4c3;
+      border-radius: 8px 0px 0px 8px;
+      position: relative;
+      top: -45%;
+      left: 13%;
+      width: 70%;
+
+      @include pad {
+        top: -40%;
+      }
+    }
+
+    .searchbutton {
+      background-color: $primary;
+      border-radius: 0px 8px 8px 0;
+      border: 1px solid $primary;
+      width: 50px;
+
+      svg {
+        color: $font-light;
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .tkhead {
+      display: flex;
+      justify-content: space-around;
+      // align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+      top: -25%;
+      padding-inline: 5%;
+
+      @include pad {
+        padding-inline: 0;
+        justify-content: center;
+        column-gap: 50px;
+        // align-items: center;
+        flex-wrap: nowrap;
+      }
+
+      @include mobile {
+        display: none;
+      }
+
+      .luckbox {
+        padding-left: 10px;
+        min-width: 180px;
+
+        @include pad {
+          position: relative;
+          top: -25px;
+        }
+      }
+
+      .tksection {
+        padding-left: 10px;
+        min-width: 300px;
+
+        @include pad {
+          min-width: 180px;
+          margin-left: 0;
+        }
+
+        ul {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          width: 320px;
+          border: none;
+
+          @include pad {
+            max-width: 180px;
+            width: 100%;
+            padding-left: 0;
+          }
+        }
+
+        li {
+          width: 50%;
+          /* 兩列，每列佔據50%的寬度 */
+          box-sizing: border-box;
+          font-size: 1.25rem;
+          font-weight: bold;
+          font-family: Noto Sans SC;
+          color: $font;
+          padding: 8px 0;
+
+          @include pad {
+            width: 50%;
+            padding: 15px 0;
+            font-size: 1.1rem;
+          }
+
+          &:hover {
+            color: $font-light;
+            text-shadow: 1px 1px 0px #0d5654;
+            font-weight: 900;
+          }
+        }
+
+        .tagcheck {
+          color: $secondary;
+          text-shadow: 2px 1px 0px #0d5654;
+          font-weight: 800;
+
+          &:hover {
+            color: $secondary;
+            font-weight: 900;
+          }
+        }
+      }
+
+      .borderLine {
+        padding-left: 10px;
+
+        @include pad {
+          padding-top: 10px;
+        }
+
+        .moneyCard {
+          padding-left: 10px;
+          height: 137.98px;
+          max-width: 300px;
+          padding-left: 32px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          row-gap: 15px;
+
+          @include pad {
+            border-left: none;
+            justify-content: start;
+            padding-left: 10px;
+            row-gap: 0;
+          }
+
+          h6 {
+            margin: 0;
+            @include fontfamily;
+            font-size: 24px;
+
+            @include pad {
+              font-size: 18px;
+            }
+          }
+
+          .setmoney {
+            max-width: 214px;
+            width: 100%;
+            border-radius: 50px;
+            border: 2px solid #0d5654;
+            font-size: 20px;
+            font-weight: 700;
+            background: #fff;
+            color: #5f5f5f;
+
+            @include pad {
+              max-width: 90px;
+              font-size: 16px;
+            }
+          }
+
+          .moneyBox {
+            display: flex;
+            max-width: 208px;
+            margin-top: 20px;
+
+            @include pad {
+              flex-direction: column;
+              justify-content: space-between;
+            }
+          }
+
+          input {
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: 0.2em;
+            max-width: 90px;
+            min-height: 30px;
+            border: 2px solid #0d5654;
+            border-radius: 10px;
+
+            @include pad {
+              margin-bottom: 10px;
+            }
+          }
+
+          .hr {
+            border-bottom: #0d5654 2px solid;
+            width: 20px;
+            position: relative;
+            top: -50%;
+            margin-inline: 5px;
+
+            @include pad {
+              display: none;
+            }
+          }
+        }
+
+        .money-check {
+          max-width: 214px;
+          width: 100%;
+          margin-left: 32px;
+          border-radius: 50px;
+          border: 2px solid #0d5654;
+          font-size: 20px;
+          font-weight: 700;
+          margin-top: 10px;
+          background: #fff;
+          color: #5f5f5f;
+
+          @include pad {
+            margin-left: 10px;
+            max-width: 90px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    // 手機使用
+    .tkhead2 {
+      margin-top: 70px;
+      display: none;
+
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-evenly;
+        // align-items: center;
+        // gap: 40px;
+        width: 100%;
+        // max-width: 466px;
+        margin-inline: auto;
+      }
+
+      .tkhead2-top {
+        display: flex;
+        justify-content: center;
+      }
+
+      .tkhead2-down {
+        display: flex;
+        justify-content: space-evenly;
+
+        .selecttag {
+          // width: 30%;
+          border-radius: 50px;
+          border: 2px solid #0d5654;
+          font-size: 20px;
+          font-weight: 700;
+          margin-inline: 0px;
+          background: #fff;
+          color: #5f5f5f;
+          box-shadow: 0 0 0 0;
+        }
+
+        .money-check {
+          // height: 54.2px;
+          width: 150px;
+          border-radius: 35px;
+          border: 2px solid #0d5654;
+          font-size: 20px;
+          font-weight: 700;
+          background: #fff;
+          color: #5f5f5f;
+        }
+      }
+    }
+  }
+
+  .pagecontent1 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    @include mobile {
+      display: grid;
+      height: auto;
+      gap: 10px;
+      transition: all 0.5s ease 0s;
+      grid-template-columns: repeat(2, minmax(0px, 1fr));
+      padding: 10px;
+    }
+  }
+}
+
+//   ticketPd使用
+//輪播圖改成持續跑圖的樣式 代替不穩定的方框
+.ticketPd {
+  @mixin w_h_100 {
+    width: 100%;
+    height: 100%;
+  }
+
+  // 元件用
+  .mySwiper {
+    width: 100%;
+    height: 450px;
+
+    .swiper-wrapper {
+      transition-timing-function: linear;
+    }
+
+    .slider {
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.6);
+
+      @include pad {
+        max-width: 600px;
+        margin-inline: auto;
+        padding: 15px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  // 水平左右置中
+  @mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // 垂直上下
+  .flex-alien-between {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  // 水平置中
+  @mixin flex-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .flex-center {
+    @include flex-center;
+  }
+
+  .between {
+    @include flex-between;
+  }
+
+  .title-text {
+    width: 100%;
+    font-weight: 700;
+
+    @include pad {
+      font-size: 20px;
+    }
+
+    @include mobile {
+      text-align: center;
+      font-size: 22px;
+    }
+  }
+
+  .line-border-3cm {
+    border: 3px solid #0d5654;
+    margin-block: 30px;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .top-text-box {
+    @include flex-between;
+    justify-content: space-around;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  .introduction {
+    display: flex;
+    row-gap: 15px;
+    flex-direction: column;
+  }
+
+  .font {
+    font-weight: 700;
+
+    @include mobile {
+      font-weight: 500;
+    }
+  }
+
+  .click-button-box {
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 415px;
+    max-height: 194px;
+    text-align: center;
+    row-gap: 15px;
+    padding: 30px;
+
+    @include pad {
+      padding: 15px;
+      max-width: 300px;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    .button-text {
+      @include pad {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+      }
+
+      b {
+        font-size: 20px;
+
+        @include pad {
+          font-size: 18px;
+        }
+      }
+    }
+
+    //   小購買按鈕
+    .click-button {
+      border-radius: 19px;
+      border: #137976 1px solid;
+      background: #137976;
+      display: flex;
+      width: 100%;
+      padding-block: 15px;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-family: Noto Sans SC;
+      font-weight: 700;
+    }
+  }
+
+  //   大購買按鈕
+
+  .buy-box {
+    margin-top: 60px;
+
+    .buy-button {
+      border-radius: 50px;
+      border: 4px solid #0d5654;
+      background: #e5efef;
+      width: 600px;
+      padding: 19px 17px;
+      @include flex-center;
+
+      .buy-button-text {
+        padding: 10px 50px;
+        border-radius: 20px;
+        background: #137976;
+        color: #fff;
+        font-family: Noto Sans SC;
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  //販售票卷種類
+  .buy-card-box {
+    padding-top: 30px;
+
+    @include mobile {
+      margin: 0 30px;
+    }
+
+    // pd-card
+    .pd-card {
+      background-image: url('/images/ticket/ticket3.svg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      min-height: 150px;
+      min-width: 320px;
+      @include w_h_100;
+      margin-top: 15px;
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 30px;
+
+      @include mobile {
+        background-image: url('/images/ticket/ticket4.svg');
+        padding: 0 10px;
+        border-radius: 15px;
+      }
+
+      .left-text {
+        padding-left: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        @include mobile {
+          padding-left: 35px;
+        }
+
+        @include down500 {
+          padding-left: 15px;
+        }
+
+        .pd-card-title {
+          color: black;
+          font-size: 20px;
+          width: 220%;
+          word-break: break-all;
+
+          @include nopc {
+            font-size: 18px;
+          }
+
+          @include mobile {
+            font-size: 16px;
+            width: 180%;
+          }
+        }
+
+        .note {
+          margin-top: 15px;
+          width: 220%;
+          color: #3f3f3f;
+          font-weight: 900;
+
+          @include pad {
+            font-size: 14px;
+          }
+
+          @include mobile {
+            margin-top: 5px;
+            font-size: 12px;
+            width: 180%;
+          }
+        }
+      }
+
+      .right-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: auto;
+
+        @include mobile {
+          max-width: 200px;
+          min-width: 150px;
+        }
+
+        .pricebox {
+          display: flex;
+          justify-content: space-evenly;
+          margin-bottom: 10px;
+          gap: 20px;
+
+          @include mobile {
+            justify-content: center;
+            text-align: center;
+          }
+
+          .price_text {
+            color: black;
+            font-weight: 700;
+
+            @include pad {
+              font-size: 15px;
+            }
+
+            @include mobile {
+              font-size: 14px;
+            }
+          }
+        }
+
+        .pdcard-button {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          gap: 20px;
+
+          @include mobile {
+            gap: 0;
+          }
+
+          .countBtn {
+            display: flex;
+            min-height: 40px;
+            border-radius: 20px;
+            justify-content: center;
+            align-items: flex-start;
+            background: #7fb8b6;
+            text-align: center;
+
+            .btnStyle {
+              background: transparent;
+              border: transparent;
+              min-width: 30px;
+              width: 100%;
+              height: 40px;
+              padding: 0 4px;
+              margin: 0;
+              color: #fff;
+            }
+
+            .countbox {
+              @include w_h_100;
+
+              background-color: #fff;
+              border: 1px solid #7fb8b6;
+
+              .countNumber {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                color: black;
+
+                @include mobile {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+
+          .buybtn {
+            border-radius: 19px;
+            background: #137976;
+            padding: 11px 0;
+            border: transparent;
+            width: 120px;
+            // width: 100%;
+            font-weight: 500;
+            color: white;
+
+            @include pad {
+              width: 120px;
+            }
+
+            @include mobile {
+              font-size: 0;
+              background: transparent;
+              max-width: 40px;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // moible-use-css----------------------------------------
+  .moible-notuse {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .mobile-use {
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  // moible-use-css----------------------------------------
+  .p-style-light {
+    text-align: start;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .p-style-dark {
+    text-align: start;
+    font-weight: 700;
+    color: #5f5f5f;
+  }
+
+  .sectionbg {
+    padding: 15px 30px 30px;
+    border-radius: 25px;
+    background: rgba(13, 86, 84, 0.7);
+    // background: rgba(19, 121, 118, 0.2);
+  }
+
+  .sectionbg-E5EFEF {
+    // background: #e5efef;
+    background: rgba(229, 239, 239, 0.5);
+    padding-block: 30px;
+  }
+
+  .nobcakground {
+    background: transparent;
+  }
+
+  // 修改共通設定 包在專用名稱內
+  .title_box_white {
+    border-left: 5px solid #ffce56;
+    padding-left: 30px;
+    margin-block: 30px;
+
+    // 分隔線
+    .hr_sect {
+      display: flex;
+      flex-basis: 100%;
+      align-items: center;
+      color: rgba(0, 0, 0, 0.35);
+      margin: 8px 0px;
+      font-size: 12px;
+
+      .title_text {
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 48px;
+        letter-spacing: 0.2em;
+        color: #ffffff;
+        margin: 10px;
+      }
+    }
+
+    .hr-sect:before,
+    .hr_sect:after {
+      content: '';
+      flex-grow: 1;
+      background: rgba(255, 255, 255, 0.35);
+      height: 1px;
+      line-height: 0px;
+      margin: 0px 0px 0px 10px;
+    }
+  }
+
+  .tab {
+    margin-top: 30px;
+    margin-inline: 5%;
+
+    .nav-fill {
+      border-radius: 35px 35px 0 0;
+      border: 2px #7fb8b6 solid;
+      overflow: hidden;
+
+      li {
+        // border: 0;
+        margin-bottom: -1px;
+        color: #0d5654;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+
+      .active {
+        background: #0d5654;
+        border: 0;
+        color: #fff;
+      }
+    }
+
+    .tab-pane {
+      padding: 30px;
+      background: #0d5654;
+      border: 2px #7fb8b6 solid;
+      border-top: none;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      border-radius: 0 0 35px 35px;
+    }
+  }
+}
+
+.all-bg {
+  background-image: url('/images/food/紙感背景.jpg');
+  background-repeat: repeat;
+
+  .sectionbg-recommend {
+    padding-bottom: 30px;
+  }
+
+  .correlation-box {
+    padding: 30px;
+  }
+
+  .pagecontent1 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    @include mobile {
+      display: grid;
+      height: auto;
+      gap: 10px;
+      transition: all 0.5s ease 0s;
+      grid-template-columns: repeat(2, minmax(0px, 1fr));
+      padding: 10px;
+    }
+  }
+}
+
+//test按鈕
+.timeset {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+
+  @include pad {
+    margin-top: 50px;
+    margin-left: -20px;
+    text-align: left;
+  }
+
+  @include mobile {
+    margin-top: 0;
+    margin-left: 0;
+    position: absolute;
+    top: calc(35% - 15px);
+  }
+}
+
+.test-draw {
+  border: 0;
+  background: transparent;
+  max-height: 150px;
+  max-width: 320px;
+
+  @include pad {
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.test-draw-open:hover {
+  animation: headShake 2s linear infinite;
+}
+.modal-back {
+  background-color: transparent;
+  color: white;
+}
+
+.draw-box {
+  --bs-modal-width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+
+  .modal-header {
+    justify-content: center;
+    border: 0;
+  }
+
+  .modal-content {
+    position: relative;
+    margin: 0;
+    width: 80%;
+    max-height: 100%;
+    padding: 0;
+
+    .col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @keyframes luck {
+        0% {
+          position: relative;
+          left: -1500px;
+        }
+
+        75% {
+          position: relative;
+          left: 500px;
+        }
+
+        100% {
+          position: relative;
+          left: 0;
+        }
+      }
+
+      .luckycard {
+        position: relative;
+        padding-block: 20px;
+        animation: luck 1s ease;
+
+        img {
+          width: 100%;
+          display: block;
+        }
+
+        .front {
+          height: 250px;
+          width: 150px;
+          transform: rotateY(90deg);
+          position: absolute;
+          transition: all ease-in 0.2s; //動畫
+        }
+
+        .fronttext {
+          position: absolute;
+          padding-inline: calc(50% - 10px);
+          font-weight: 700;
+          font-size: 20px;
+          top: 28%;
+          color: black;
+        }
+
+        .back {
+          height: 250px;
+          width: 150px;
+          transition: all ease-in 0.2s; //動畫
+          transition-delay: 0.2s; //動畫
+        }
+
+        .back:hover {
+          animation: hoverShake 2s infinite linear;
+        }
+
+        .flipped {
+          .front {
+            transform: rotateY(0deg);
+            transition-delay: 0.2s; //動畫
+            animation: splitAndExpand 0.5s linear;
+          }
+
+          .back {
+            transform: rotateY(90deg);
+            transition-delay: 0s; //動畫
+          }
+
+          .back:hover {
+            animation: none;
+          }
+        }
+      }
+    }
+  }
+}

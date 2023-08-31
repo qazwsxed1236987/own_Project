@@ -1,0 +1,35 @@
+{
+  "attractions": [
+    {
+      "attraction_id": 600003,
+      "attraction_name": "駁二藝術特區",
+      "description": "駁二藝術特區是高雄的代表性景點，有著濃厚的文藝氛圍，許多藝術創意聚集於此。"
+    },
+    {
+      "attraction_id": 600012,
+      "attraction_name": "義大世界",
+      "description": "結合主題樂園、數位影城、星級飯店、Outlet Mall等複合式娛樂購物中心，是大人購物、小孩玩樂的好去處"
+    },
+    {
+      "attraction_id": 600020,
+      "attraction_name": "蓮池潭",
+      "description": "蓮池潭是一個寧靜優美的湖泊，四周環繞著青山綠水，是賞景和散步的絕佳場所。"
+    },
+    {
+      "attraction_id": 60012,
+      "attraction_name": "西子灣",
+      "description": "草衙飛行器博物館是一個航空愛好者的天堂，展示著各式各樣的飛行器和航空歷史。"
+    },
+    {
+      "attraction_id": 600006,
+      "attraction_name": "壽山動物園",
+      "description": "楠梓大虹橋是一座雄偉壯觀的橋樑，提供絕佳的觀景平台，讓遊客欣賞高雄的美景。"
+    },
+    {
+      "attraction_id": 600031,
+      "attraction_name": "瑞豐夜市",
+      "description": "人聲鼎沸的戶外市場，集娛樂休閒於一地，有許多販賣美食小吃、手工藝品和其他商品的攤販。"
+    }
+  
+  ]
+}

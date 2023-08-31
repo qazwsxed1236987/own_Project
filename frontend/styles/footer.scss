@@ -1,0 +1,43 @@
+.footer {
+  background-color: #444444;
+  min-height: 180px;
+  position: relative;
+  bottom: 0;
+  z-index: 10;
+  overflow: hidden;
+  color: #fff;
+  .logo {
+    position: relative;
+    width: 20%;
+  }
+  .logo img {
+    position: relative;
+    top: 50%;
+
+    margin-left: 40%;
+    transform: translateY(-50%);
+  }
+  .frame {
+    width: 60%;
+    padding: 20px 0 20px 30px;
+    .mfee {
+      font-weight: bold;
+      font-size: 28px;
+    }
+    .element {
+      font-size: 20px;
+    }
+    .element a {
+      color: #fff;
+    }
+  }
+  .date {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    bottom: 0%;
+    width: 20%;
+    font-size: 18px;
+  }
+}

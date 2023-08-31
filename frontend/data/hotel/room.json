@@ -1,0 +1,67 @@
+{
+    "data": [
+      {
+        "room_id": 500020011,
+        "room_name": "經典客房",
+        "room_type": "2張加大雙人床",
+        "room_describe": "含早餐－評價很好",
+        "room_capacity": 2,
+        "room_price": 9135,
+        "hotel_name": "高雄萬豪酒店"
+      },
+      {
+        "room_id": 500020012,
+        "room_name": "豪華特大號床間",
+        "room_type": "1張特大雙人床",
+        "room_describe": "含早餐－評價很好",
+        "room_capacity": 2,
+        "room_price": 9450,
+        "hotel_name": "高雄萬豪酒店"
+      },
+      {
+        "room_id": 500020013,
+        "room_name": "豪華行政特大床號間-可使用行政酒廊",
+        "room_type": "1張特大雙人床",
+        "room_describe": "含早餐－評價很好",
+        "room_capacity": 2,
+        "room_price": 11340,
+        "hotel_name": "高雄萬豪酒店"
+      },
+      {
+        "room_id": 500020014,
+        "room_name": "尊爵套房－附 1 張特大雙人床－可使用行政貴賓廳",
+        "room_type": "1張特大雙人床",
+        "room_describe": "含早餐－評價很好",
+        "room_capacity": 2,
+        "room_price": 14910,
+        "hotel_name": "高雄萬豪酒店"
+      },
+      {
+        "room_id": 500020015,
+        "room_name": "單臥室行政特級特大雙人床套房－可使用行政貴賓廳",
+        "room_type": "1張特大雙人床",
+        "room_describe": "含早餐－評價很好",
+        "room_capacity": 2,
+        "room_price": 15708,
+        "hotel_name": "高雄萬豪酒店"
+      },
+      {
+        "room_id": 500020016,
+        "room_name": "家庭房－附 2 張雙人床",
+        "room_type": "2張加大雙人床",
+        "room_describe": "含早餐－評價很好",
+        "room_capacity": 4,
+        "room_price": 11655,
+        "hotel_name": "高雄萬豪酒店"
+      },
+      {
+        "room_id": 500020017,
+        "room_name": "連通雙臥室家庭套房－可使用行政貴賓廳",
+        "room_type": "1張特大雙人床 1張加大雙人床",
+        "room_describe": "含早餐－評價很好",
+        "room_capacity": 4,
+        "room_price": 18648,
+        "hotel_name": "高雄萬豪酒店"
+      }
+    ]
+  }

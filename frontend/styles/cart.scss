@@ -1,0 +1,303 @@
+// 檔案位置: styles/global.scss
+// 變數覆蓋用 (Variable overrides)
+// 全站配色 colors
+$primary: #137976;
+$primary-dark: #0d5654;
+$primary-light: #7fb8b6;
+$primary-bg: #e5efef;
+$secondary: #ffce56;
+
+// 字體配色
+$font: #5f5f5f;
+$font-light: #ffff;
+
+// 按鈕圓角邊 button radius
+$border-radius: 0.2em;
+$border-radius-sm: 0.2em;
+$border-radius-lg: 0.2em;
+
+// .cart-card {
+//   height: auto;
+//   max-width: 700px;
+// }
+
+// .cart-card .iconbar {
+//   font-size: 18px;
+// }
+/* cart頁 */
+#cart-page {
+  margin: 0;
+  padding-inline: 160px;
+  font-family: 'Noto Sans TC';
+  font-weight: 300;
+  //1.購物順序
+  #cart-steps {
+    padding-block: 20px;
+    position: sticky;
+    top: 100px;
+    background-color: #fff;
+    z-index: 30;
+
+    p {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 500;
+      color: $font;
+      span {
+        height: 100%;
+        padding-left: 20px;
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+    .now-step {
+      color: $primary;
+    }
+  }
+
+  //2.購物車內商品
+  #cart-products {
+    //2-1 選擇商品類型
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      padding: 8px 20px;
+      letter-spacing: 2px;
+      border-radius: 15px 15px 0px 0px;
+      overflow: hidden;
+      transition: color 1s, background-color 1s;
+      &:hover {
+        background-color: $primary;
+        color: #fff;
+      }
+    }
+    .now-product-type {
+      background-color: #7fb8b6;
+      color: #fff;
+      border-radius: 15px 15px 0px 0px;
+    }
+    //2-2 購物車table
+    #cart-list {
+      table {
+        border: 3px solid #5f5f5f;
+      }
+      thead {
+        background-color: $font;
+
+        color: #fff;
+        height: 40px;
+
+        tr th {
+          font-weight: 500;
+          text-align: center;
+          &:nth-child(1) {
+            padding-left: 30px;
+            text-align: left;
+          }
+        }
+      }
+      tbody {
+        tr {
+          &:nth-child(2n) {
+            background-color: #e5efef;
+          }
+          &:nth-child(2n + 1) {
+            background-color: #fbfbfb;
+          }
+        }
+        tr td {
+          height: 100px;
+          text-align: center;
+
+          &:nth-child(1) {
+            padding-left: 20px;
+            text-align: left;
+            img {
+              width: 80px;
+              height: 80px;
+            }
+          }
+          &:nth-child(3) {
+            left: 50%;
+            transform: translateX(-50%);
+          }
+          &:nth-child(5) {
+            align-items: center;
+            padding-left: 10px;
+          }
+          .count-btn {
+            margin: auto;
+          }
+        }
+        #product-count {
+          display: inline;
+          width: 45px;
+          margin: auto;
+          height: 40px;
+
+          border: 1px solid $primary-light;
+
+          input {
+            background-color: #fff;
+            border: 0px;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+          }
+        }
+        input[type='number']::-webkit-outer-spin-button,
+        input[type='number']::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        .count-btn {
+          background: $primary-light;
+          height: 40px;
+          width: 40px;
+          color: #fff;
+          border: 0px solid;
+          font-size: 24px;
+          padding: 0;
+          &:hover {
+            background: $primary;
+          }
+        }
+        .count-btn-minus {
+          border-radius: 20px 0px 0px 20px;
+        }
+        .count-btn-add {
+          border-radius: 0px 20px 20px 0px;
+        }
+        .cart-delete {
+          color: #888;
+          font-size: 25px;
+          padding-left: 5px;
+        }
+        .cart-delete:hover {
+          color: #cc4646;
+        }
+      }
+    }
+
+    .cart-total {
+      position: relative;
+      right: 0;
+      font-size: 18px;
+      text-align: right;
+      span {
+        font-weight: 500;
+        color: $primary;
+      }
+    }
+  }
+
+  //4.按鈕
+  .cart-btn-group {
+    position: relative;
+    button {
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      width: 160px;
+      padding-block: 10px;
+      color: #fff;
+
+      a {
+        color: #fff;
+      }
+    }
+    .btn-back {
+      background-color: $primary-light;
+      &:hover {
+        background-color: $primary;
+      }
+    }
+    .btn-delete {
+      margin-left: 30px;
+      background-color: #888;
+      &:hover {
+        background-color: $font;
+      }
+    }
+    .btn-nextpage {
+      border: 0;
+      border-radius: 3.6px;
+      width: 200px;
+      background-color: #ffc700;
+      position: absolute;
+      top: 0;
+      right: 0;
+      &:hover {
+        background-color: $secondary;
+      }
+    }
+  }
+}
+
+// 付款與運送資訊
+#food-confirm,
+#ticket-confirm {
+  font-size: 18px;
+  table {
+    // margin-top: 20px;
+    thead tr {
+      border-bottom: 1px solid #888;
+    }
+    th {
+      font-weight: 300;
+      padding-block: 20px;
+      &:first-child {
+        font-size: 24px;
+        font-weight: 500;
+      }
+    }
+    tbody {
+      background: #f8f8f8;
+    }
+    .no-active {
+      display: none;
+    }
+
+    td {
+      height: 100px;
+      img {
+        height: 80px;
+        width: 80px;
+      }
+      span {
+        padding-left: 15px;
+      }
+      &:first-child {
+        padding-left: 30px;
+      }
+    }
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+#paymentForm {
+  // input {
+  //   width: 90%;
+  // }
+  .carddata {
+    position: relative;
+    .credit-card {
+      position: absolute;
+      left: 400px;
+      top: 20px;
+    }
+  }
+  .submit-btn {
+    position: relative;
+    height: 100%;
+    input {
+      right: 0;
+      bottom: 0px;
+    }
+  }
+}
